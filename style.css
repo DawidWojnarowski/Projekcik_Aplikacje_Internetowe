@@ -1,0 +1,44 @@
+@keyframes top_to_bottom{
+    from{bottom: 1300px}
+    to{bottom:70px}
+}
+@keyframes blinking{
+    from{opacity: 0.2}
+    to{opacity:1}
+}
+.game_title{
+    position: fixed;
+    width: 100%;
+    bottom: 70px;
+    z-index: 9;
+    margin-left: -960px;
+    left: 50%;
+    animation: top_to_bottom 5s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+.below_title{
+    position: fixed;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    right: 150px;
+    bottom: -120px;
+
+}
+.press_any_key{
+    position: fixed;
+    width: 80%;
+    bottom: 200px;
+    z-index: 9;
+    margin-left: -500px;
+    left: 50%;
+    opacity: 0;
+    animation: blinking 1s;
+    animation-delay: 6s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+
+}

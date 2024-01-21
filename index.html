@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>WSB</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+          background-image: url('images/title_screen/page_background.png');
+          background-color: #cccccc;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: 100% 100%;
+        }
+        </style>
+</head>
+<body>
+    <div class="game_title" id="title_div">
+        <img src="images/title_screen/title.png" alt="TITLE" id="title">
+    </div>
+    <div class="sword" id="sword_div">
+        <img src="images/title_screen/miecz.png" id="sword" alt="sword">
+    </div>
+    <div class="press_any_key" id="press_any_key_div">
+        <img src="images/title_screen/press_any_key.png" id="press_any_key" alt="press_any_key">
+    </div>
+	<audio controls hidden muted autoplay id="silence">
+		<source src="audio/music/silence.mp3" type="audio/mp3">
+	</audio>
+	<audio autoplay loop id="title_screen_music">
+		<source src="audio/music/title_screen_music.mp3" type="audio/mp3">
+	</audio>
+	<script type="text/javascript" src="WSB.js"></script>
+</body>
+</html>

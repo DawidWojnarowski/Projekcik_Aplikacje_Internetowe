@@ -1,0 +1,62 @@
+@keyframes top_to_bottom{
+    from {top: -10%}
+    to {top: 88%}
+}
+@keyframes blinking{
+    from{opacity: 0.2}
+    to{opacity:1}
+}
+#title_div{
+	top: 88%;
+	width: 90%;
+	position: fixed;
+	left: 5%;
+    display: inline-block;
+	margin: auto;
+	z-index: 9;
+    animation: top_to_bottom;
+	animation-duration: 5s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+#title{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 82%;
+}
+#sword_div{
+    position: absolute;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+	height: auto;
+	bottom: 0%;
+}
+#sword{
+	position: relative;
+	width: 50%;
+	height: auto;
+	left: -160px;
+}
+#press_any_key_div{
+	top: 80%;
+    position: fixed;
+	left: 5%;
+    width: 90%;
+    padding: 10px;
+    margin: auto;
+    opacity: 0;
+    animation: blinking 1s;
+    animation-delay: 6s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+#press_any_key{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 42%;
+}

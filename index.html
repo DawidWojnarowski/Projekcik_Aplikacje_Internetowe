@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
+    
 <head>
     <meta charset="utf-8">
 	<title>WSB</title>
@@ -7,16 +8,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-          background-image: url('images/title_screen/page_background.png');
-          background-color: #cccccc;
-          background-repeat: no-repeat;
-          background-attachment: fixed;
-          background-size: 100% 100%;
+            background-image: url('images/title_screen/page_background.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
         }
         </style>
 </head>
 <body>
+    <div id="menu_container">  
+        <div id="menu_container_background"></div>  
+        <div id="menu_text">Menu</div>
+        <div id="menu_option_buttons">
+            <button id="start_game_button" class="menu_btn">Start Game</button>
+            <button id="load_game" class="menu_btn">Load Game</button>
+            <button id="credits" class="menu_btn">Credits</button>
+            <button id="exit_button" class="menu_btn">Exit Game</button>
+            <button id="return_button" class="menu_btn">Return</button>
+        </div>
+    </div>
+    <div id="game_container" hidden="hidden">  
+        <div id="game_container_background"></div>  
+        <div id="plot_text"></div>
+        <div id="game_option_buttons" class="btn-grid">
+            <button class="btn">Option 1</button>
+            <button class="btn">Option 2</button>
+            <button class="btn">Option 3</button>
+            <button class="btn">Option 4</button>
+        </div>
+        <form id="input_user_name">
+            <label for="char_name">Jakie imię chcesz nadać swojemu bohaterowi?</label>
+            <input type="text" id="char_name">
+        </form>
+        <button class="menu_btn" id="confirm_user_name">Potwierdź</button>
+    </div>
+    <div id="support_image_container">  
+        <div id="support_image_container_background"></div>  
+        <img src="images/in_game/herb_final.PNG" alt="support_image" id="support_image">
+    </div>
+    <div id="bottom_menu_container">  
+    <div id="bottom_menu_container_background"></div>  
+    <div id="bottom_menu_buttons">
+        <button id="restart_game_button" class="bottom_menu_btn">Restart Game</button>
+        <button id="bottom_save_game" class="bottom_menu_btn">Save Game</button>
+        <button id="bottom_load_game" class="bottom_menu_btn">Load Game</button>
+        <button id="bottom_return_button" class="bottom_menu_btn">Return to Menu</button>
+        <button id="bottom_exit_button" class="bottom_menu_btn">Exit Game</button>
+    </div>
+    </div>
     <div class="game_title" id="title_div">
+        <img src="images/title_screen/wood-pattern.png" alt="TITLE_BACKGROUND" id="title_background">
         <img src="images/title_screen/title.png" alt="TITLE" id="title">
     </div>
     <div class="sword" id="sword_div">
@@ -25,12 +66,27 @@
     <div class="press_any_key" id="press_any_key_div">
         <img src="images/title_screen/press_any_key.png" id="press_any_key" alt="press_any_key">
     </div>
-	<audio controls hidden muted autoplay id="silence">
-		<source src="audio/music/silence.mp3" type="audio/mp3">
-	</audio>
-	<audio autoplay loop id="title_screen_music">
+	<audio loop id="title_screen_music" style="display:none">
 		<source src="audio/music/title_screen_music.mp3" type="audio/mp3">
 	</audio>
+    <audio loop id="throne_room_music" style="display:none">
+		<source src="audio/music/throne_room.mp3" type="audio/mp3">
+	</audio>
+    <audio loop id="swamp_ambience" style="display:none">
+		<source src="audio/sounds/swamp.mp3" type="audio/mp3">
+	</audio>
+    <audio loop id="cave_singing" style="display:none">
+		<source src="audio/sounds/cave_singing.mp3" type="audio/mp3">
+	</audio>
+    <audio loop id="sword_fight" style="display:none">
+		<source src="audio/sounds/sword_fight.mp3" type="audio/mp3">
+	</audio>
 	<script type="text/javascript" src="WSB.js"></script>
+    <svg>
+        <filter id="wavy2">
+          <feTurbulence x="0" y="0" baseFrequency="0.02" numOctaves="5" seed="1" />
+          <feDisplacementMap in="SourceGraphic" scale="20" />
+        </filter>
+      </svg>
 </body>
 </html>

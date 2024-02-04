@@ -1,32 +1,68 @@
+@import url(https://fonts.googleapis.com/css?family=Tangerine:400,700);
+@import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
+@import url(https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap);
+@import "https://unpkg.com/open-props" layer(design.system);
+@import "https://unpkg.com/open-props/normalize.min.css" layer(demo.support);
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family: 'Great Vibes', cursive;
+}
+body{
+    right: 10px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 99,7vw;
+    height: 100vh;
+}
 @keyframes top_to_bottom{
-    from {top: -10%}
-    to {top: 88%}
+    from {top: -60%}
+    to {top: 41%}
 }
 @keyframes blinking{
     from{opacity: 0.2}
     to{opacity:1}
 }
 #title_div{
-	top: 88%;
-	width: 90%;
-	position: fixed;
-	left: 5%;
+    z-index: 8;
+	top: 41%;
+	width: 85%;
+    height: 10%;
+	position: relative;
+	left: 1.5%;
     display: inline-block;
 	margin: auto;
-	z-index: 9;
     animation: top_to_bottom;
 	animation-duration: 5s;
     animation-delay: 0s;
     animation-timing-function: linear;
 }
+#title_background{
+    width: 102%;
+    height: 102%;
+    position: absolute;
+	margin: auto;
+    background-color: #855900;
+    border-radius: 50px;
+    border-style: solid;
+    border-color: #2b1800;
+    border-width: 10px;
+    box-shadow: 0 12px 16px 15px rgba(0,0,0,0.24), 0 17px 50px 15px rgba(0,0,0,0.19)
+}
 #title{
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 82%;
+    position: absolute;
+	top: 28%;
+    left: 5%;
+	width: 90%;
+    z-index: 9;
 }
 #sword_div{
     position: absolute;
+    z-index: 5;
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
@@ -39,8 +75,10 @@
 	width: 50%;
 	height: auto;
 	left: -160px;
+    bottom: -10px;
 }
 #press_any_key_div{
+    z-index: 6;
 	top: 80%;
     position: fixed;
 	left: 5%;
@@ -59,4 +97,281 @@
 	margin-left: auto;
 	margin-right: auto;
 	width: 42%;
+}
+#game_container{
+    padding: 10px;
+    right: 11%;
+    display: none;
+    width: 50%;
+    height: 45%;
+    top: 24%;
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #fffef0;
+    box-shadow: 2px 3px 20px black, 0 0 125px #8f5922 inset;
+    z-index: 6;
+}
+#game_container_background{
+        padding: 10px;
+        left: -10%;
+        top: -10%;
+        margin: auto;
+        width: 120%;
+        height: 120%;
+        position: absolute;
+        max-width: 120%;
+        max-height: 120%;
+        background-color: #fffef0;
+        filter: url(#wavy2);
+        box-shadow: 2px 3px 20px black, 0 0 125px #8f5922 inset;
+        z-index: 7;
+        font-size: 100%;
+}
+#plot_text{
+    display: block;
+    position: relative;
+    font-size: calc(1.3vw + 1.3vh);
+    z-index: 8;
+}
+#game_option_buttons{
+    display: grid;
+    position: absolute;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    gap: 15px;
+    width: 100%;
+    max-height: 100%;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    z-index: 8;
+    word-wrap: break-word;      /* IE 5.5-7 */
+    white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
+    white-space: pre-wrap;      /* current browsers */
+}
+#input_user_name{
+    display: none;
+    position: absolute;
+    z-index: 9;
+    margin: auto;
+    font-size: calc(2vw + 2vh);
+}
+#char_name{
+    position: absolute;
+    top: 190%;
+    left: 20%;
+}
+#confirm_user_name{
+    display: none;
+    position: absolute;
+    z-index: 9;
+    top: 75%;
+    margin: auto;
+    font-size: calc(2vw + 2vh);
+}
+.btn{
+    min-height: 50px;
+    min-width: 25%;
+    max-width: 100%;
+    max-height: 100%;
+    font-size: calc(1vw + 1vh);
+    background-image: url("images/title_screen/wood-pattern.png");
+    background-color: #b87500;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: #2b1800;
+    border-width: 5px;
+    background-size: 100%;
+    box-shadow: 0 8px 16px 5px rgba(0,0,0,0.2), 0 6px 20px 5px rgba(0,0,0,0.19)
+}
+.btn:hover{
+    box-shadow: 0 12px 16px 15px rgba(0,0,0,0.24), 0 17px 50px 15px rgba(0,0,0,0.19)
+}
+.btn:active{
+    background-color: #805100;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+#menu_container{
+    padding: 10px;
+    margin: auto;
+    /*display: inline-block;*/
+    display: none;
+    width: 25%;
+    height: 57%;
+    top: 28%;
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #fffef0;
+    box-shadow: 2px 3px 20px black, 0 0 125px #8f5922 inset;
+    z-index: 6;
+}
+#menu_container_background{
+        padding: 10px;
+        left: -10%;
+        top: -10%;
+        margin: auto;
+        width: 120%;
+        height: 120%;
+        position: absolute;
+        max-width: 120%;
+        max-height: 120%;
+        background-color: #fffef0;
+        filter: url(#wavy2);
+        box-shadow: 2px 3px 20px black, 0 0 125px #8f5922 inset;
+        z-index: 7;
+        font-size: 100%;
+}
+#menu_text{
+    text-align: center;
+    display: block;
+    position: relative;
+    font-weight: bold;
+    font-size: calc(3vw + 3vh);
+    z-index: 8;
+}
+#menu_option_buttons{
+    display: inline-block;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 100%;
+    z-index: 8;
+    word-wrap: break-word;      /* IE 5.5-7 */
+    white-space: moz-pre-wrap; /* Firefox 1.0-2.0 */
+    white-space: pre-wrap;      /* current browsers */
+}
+.menu_btn{
+   width: 100%;
+    margin-bottom: 15px;
+    font-size: calc(1.5vw + 1.5vh);
+    background-image: url("images/title_screen/wood-pattern.png");
+    background-color: #b87500;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: #2b1800;
+    border-width: 5px;
+    background-size: 100%;
+    box-shadow: 0 8px 16px 5px rgba(0,0,0,0.2), 0 6px 20px 5px rgba(0,0,0,0.19)
+}
+.menu_btn:hover{
+    box-shadow: 0 12px 16px 15px rgba(0,0,0,0.24), 0 17px 50px 15px rgba(0,0,0,0.19)
+}
+.menu_btn:active{
+    background-color: #805100;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+#return_button{
+    display: none;
+    position: relative;
+}
+#bottom_menu_container{
+    padding: 10px;
+    margin: auto;
+    /*display: inline-block;*/
+    display: none;
+    width: 80%;
+    height: 12%;
+    top: 80%;
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #fffef0;
+    box-shadow: 2px 3px 20px black, 0 0 125px #8f5922 inset;
+    z-index: 6;
+}
+#bottom_menu_container_background{
+        padding: 10px;
+        left: -5%;
+        top: -5%;
+        margin: auto;
+        width: 110%;
+        height: 110%;
+        position: absolute;
+        max-width: 120%;
+        max-height: 120%;
+        background-color: #fffef0;
+        filter: url(#wavy2);
+        box-shadow: 2px 3px 20px black, 0 0 125px #8f5922 inset;
+        z-index: 7;
+        font-size: 100%;
+}
+#bottom_menu_buttons{
+    display: flex;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-height: 100%;
+    z-index: 8;
+    word-wrap: break-word;      /* IE 5.5-7 */
+    white-space: moz-pre-wrap; /* Firefox 1.0-2.0 */
+    white-space: pre-wrap;      /* current browsers */
+}
+.bottom_menu_btn{
+     width: 23%;
+     transform: translate(0, -20%);
+     margin: 20px;
+     font-size: calc(1.2vw + 1.2vh);
+     font-weight: bold;
+     background-image: url("images/title_screen/wood-pattern.png");
+     background-color: #b87500;
+     border-radius: 15px;
+     border-style: solid;
+     border-color: #2b1800;
+     border-width: 5px;
+     background-size: 100%;
+     box-shadow: 0 8px 16px 5px rgba(0,0,0,0.2), 0 6px 20px 5px rgba(0,0,0,0.19)
+}
+.bottom_menu_btn:hover{
+    box-shadow: 0 12px 16px 15px rgba(0,0,0,0.24), 0 17px 50px 15px rgba(0,0,0,0.19)
+}
+.bottom_menu_btn:active{
+    background-color: #805100;
+    box-shadow: 0 5px #666;
+    transform: translateY(2px);
+}
+#support_image_container{
+    padding: 10px;
+    left: 8%;
+    display: none;
+    width: 20%;
+    height: 45%;
+    top: -3.4%;
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #fffef0;
+    box-shadow: 2px 3px 20px black, 0 0 125px #8f5922 inset;
+    z-index: 6;
+}
+#support_image_container_background{
+        padding: 10px;
+        left: -10%;
+        top: -10%;
+        margin: auto;
+        width: 120%;
+        height: 120%;
+        position: absolute;
+        max-width: 120%;
+        max-height: 120%;
+        background-color: #fffef0;
+        filter: url(#wavy2);
+        box-shadow: 2px 3px 20px black, 0 0 125px #8f5922 inset;
+        z-index: 7;
+}
+#support_image{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    top: 10%;
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    z-index: 8;
 }

@@ -28,7 +28,7 @@ function press_any_key(){
         document.getElementById('exit_button').style.display='none';
         document.getElementById('menu_option_buttons').style.top='85%';
         document.getElementById('return_button').style.display='inline-block';
-        document.getElementById('menu_text').style.fontSize='calc(1.5vw + 1.5vh)'
+        document.getElementById('menu_text').style.fontSize='calc(1.2vw + 1.2vh)'
         document.getElementById('menu_text').innerHTML = "Możliwość zapisywania i wczytywania udostępnimy w kolejnej wersji :)"
         console.log("Load game attempted from main menu");
 
